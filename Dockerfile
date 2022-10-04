@@ -13,13 +13,13 @@ RUN python3 -m pip install jupyterlab ipython numpy matplotlib scipy pandas skle
 
 RUN useradd --create-home --shell /bin/bash ${USER} \
 	&& mkdir -p ${WORKING_DIR}
-	
+
+USER ${USER}
 WORKDIR ${WORKING_DIR}
 
-COPY sl/datasets/ lab/datasets/ ./datasets/
+COPY ./codes/datasets/ ./datasets/
 
-COPY sl /abmvol/
-COPY lab /abmvol/
+COPY ./codes/ /abmvol/codes/
 
 CMD jupyter notebook --NotebookApp.token=''  --ip 0.0.0.0 --port 1234 --allow-root --no-browser
 

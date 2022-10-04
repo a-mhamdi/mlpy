@@ -1,5 +1,6 @@
 # PYML
-A convenient way to run machine learning labs on various platform using Docker.
+
+A convenient way to run machine learning codes on multiple platforms using Docker.
 
 [![PYML CI](https://github.com/a-mhamdi/pyml/actions/workflows/docker-image.yml/badge.svg)](https://github.com/a-mhamdi/pyml/actions/workflows/docker-image.yml)
 [![Docker Stars](https://img.shields.io/docker/stars/abmhamdi/pyml)](https://hub.docker.com/r/abmhamdi/pyml)
@@ -8,7 +9,6 @@ A convenient way to run machine learning labs on various platform using Docker.
 [![Docker Automated](https://img.shields.io/docker/cloud/automated/abmhamdi/pyml)](https://hub.docker.com/r/abmhamdi/pyml)
 [![Docker Build](https://img.shields.io/docker/cloud/build/abmhamdi/pyml)](https://hub.docker.com/r/abmhamdi/pyml)
 
-
-The repository contains the Dockerfile I use to create an image where students can run the labs of Machine Learning. I opted for `Python` as the main programming language, and for `Jupyter Notebook` as the main development environment. The host OS is `Ubuntu`.
+The repository contains the Dockerfile I use to create an image where you can run smoothly some codes of Machine Learning. I opted for `Python` as the main programming language, and for `Jupyter Notebook` as the main development environment. The host OS is `Ubuntu`.
 
 The latest image is built upon every push to this repo. Every update is available at [dockerhub](https://hub.docker.com/) via [abmhamdi/pyml](https://hub.docker.com/repository/docker/abmhamdi/pyml)
