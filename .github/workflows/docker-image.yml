@@ -36,7 +36,7 @@ jobs:
       run: docker build . --file Dockerfile --tag pyml:$(date +%s)
     -
       name: Build and push Docker images
-  	  uses: docker/build-push-action@v3.1.1
+      uses: docker/build-push-action@v3.1.1
       with:
           context: .
           file: ./Dockerfile
