@@ -4,9 +4,7 @@ RUN apt-get update \
 	&& apt-get install -y apt-utils nano vim \
 	&& apt-get install -y python3 python3-pip
 
-RUN python3 -m pip install jupyterlab ipython numpy matplotlib scipy pandas \
-	&& python3 -m pip install sklearn \
-	&& python3 -m pip install tensorflow keras\
+RUN python3 -m pip install jupyterlab ipython numpy matplotlib scipy pandas sklearn tensorflow keras
 
 RUN useradd --create-home --shell /bin/bash ml
 
