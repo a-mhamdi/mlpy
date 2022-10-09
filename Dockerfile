@@ -1,4 +1,5 @@
 FROM python:latest
+
 EXPOSE 1234
 
 ENV USER ml
@@ -12,6 +13,7 @@ RUN useradd --create-home --shell /bin/bash ${USER} \
 	&& mkdir -p ${WORKING_DIR}
 
 USER ${USER}
+
 WORKDIR ${WORKING_DIR}
 
 COPY ./codes/datasets/ ./datasets/
