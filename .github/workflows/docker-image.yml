@@ -39,5 +39,6 @@ jobs:
       with:
           context: .
           file: ./Dockerfile
+          platforms: linux/amd64,linux/arm/v7
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/pyml:latest
