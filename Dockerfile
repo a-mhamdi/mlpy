@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} python:3.6.9
+FROM --platform=${BUILDPLATFORM} python:latest
 
 EXPOSE 1234
 
