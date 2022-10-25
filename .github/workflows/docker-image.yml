@@ -1,4 +1,4 @@
-name: PYML CI
+name: ML-ISET CI
 
 on:
   push:
@@ -41,4 +41,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/pyml:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ml-iset:latest

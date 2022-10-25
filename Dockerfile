@@ -2,7 +2,7 @@ FROM --platform=${BUILDPLATFORM} python:3.6.9
 
 EXPOSE 1234
 
-ENV USER ml
+ENV USER iset 
 ENV USER_HOME_DIR /home/${USER}
 ENV WORKING_DIR ${USER_HOME_DIR}/repo
 
