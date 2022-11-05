@@ -1,4 +1,4 @@
-FROM python:latest
+FROM --platform=$TARGETPLATFORM python:latest
 
 EXPOSE 4321
 
