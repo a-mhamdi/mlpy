@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} python:latest
+FROM python:latest
 
 EXPOSE 4321
 
