@@ -1,6 +1,6 @@
 FROM --platform=${BUILDPLATFORM} python:latest
 
-EXPOSE 1234
+EXPOSE 4321
 
 ENV USER iset 
 ENV USER_HOME_DIR /home/${USER}
@@ -21,5 +21,4 @@ COPY ./codes/datasets/ ./datasets/
 COPY ./codes/ /codes/
 
 # Default command: Jupyter Notebook
-CMD jupyter notebook --NotebookApp.token=''  --ip 0.0.0.0 --port 1234 --allow-root --no-browser
-
+CMD jupyter notebook --NotebookApp.token=''  --ip 0.0.0.0 --port 4321 --allow-root --no-browser
