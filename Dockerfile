@@ -6,7 +6,7 @@ ENV USER iset
 ENV USER_HOME_DIR /home/${USER}
 ENV WORKING_DIR ${USER_HOME_DIR}/repo
 
-RUN python3 -m pip install jupyterlab ipython numpy matplotlib scipy pandas sklearn 
+RUN python3 -m pip install jupyterlab ipython numpy matplotlib scipy pandas sklearn seaborn
 # tensorflow keras
 
 RUN useradd --create-home --shell /bin/bash ${USER} \
