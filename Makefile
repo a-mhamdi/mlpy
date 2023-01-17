@@ -1,4 +1,4 @@
 make:
-	rsync -avr ~/MEGA/git-repos/isetbz/"Artificial Intelligence"/Codes/Python/ ./codes/
-	rsync -avr ~/MEGA/git-repos/cosnip/Python/ml/ ./codes/
-	# docker build -t ml-iset:latest .
+	rsync -av /home/mhamdi/MEGA/sci-prod/tbs/ai/sl-ai/l3/ml-l3.pdf ./L3/"An Introduction To ML".pdf 
+	rsync -av /home/mhamdi/MEGA/sci-prod/tbs/ai/lab-ai/l3/lab-ml-l3.pdf ./L3/"Lab-ML".pdf 
+
