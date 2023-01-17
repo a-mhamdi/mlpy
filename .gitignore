@@ -1,5 +1,5 @@
 *.wakatime-project
 
 # Virtual Environment
-./Codes/Python/venv/
+**/venv/
 
