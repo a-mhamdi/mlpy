@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3.10
 
 EXPOSE 4321
 
@@ -13,12 +13,10 @@ RUN useradd --create-home --shell /bin/bash ${USER} \
 	&& mkdir -p ${WORKING_DIR}
 
 USER ${USER}
-
 WORKDIR ${WORKING_DIR}
 
-COPY ./codes/datasets/ ./datasets/
-
-COPY ./codes/ /codes/
+COPY ../Codes/Python/datasets/ ./datasets/
+COPY ../Codes/Python/ /codes/
 
 # Default command: Jupyter Notebook
 CMD jupyter notebook --NotebookApp.token=''  --ip 0.0.0.0 --port 4321 --allow-root --no-browser
