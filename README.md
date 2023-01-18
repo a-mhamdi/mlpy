@@ -1,6 +1,6 @@
 ## Machine Learning with Python
 
-This repository contains slides and code examples for using `Python` to implement some **machine learning** related algorithms. Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment.
+This repository contains slides, labs and code examples for using `Python` to implement some **machine learning** related algorithms. Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment.
 
 To run the code, you will need to first pull the `Docker` image by running the following command:
 
