@@ -26,6 +26,8 @@ ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 # Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
 RUN python3 -m pip install --upgrade pip
 # Install packages
-RUN python3 -m pip install jupyterlab ipython numpy matplotlib scipy pandas sklearn seaborn keras tensorflow
+RUN python3 -m pip install ipython jupyterlab
+RUN python3 -m pip install numpy matplotlib scipy pandas seaborn
+RUN python3 -m pip install --use-pep517 sklearn tensorflow keras
 # Default command: Jupyter Lab
 CMD jupyter lab --NotebookApp.token=''  --ip 0.0.0.0 --port 1357 --allow-root --no-browser
