@@ -7,6 +7,6 @@ A convenient way to run machine learning codes on multiple platforms using Docke
 [![Docker Pulls](https://img.shields.io/docker/pulls/abmhamdi/mlpy)](https://hub.docker.com/r/abmhamdi/mlpy)
 [![Docker Stars](https://img.shields.io/docker/stars/abmhamdi/mlpy)](https://hub.docker.com/r/abmhamdi/mlpy)
 
-The repository contains the Dockerfile I use to create an image where you can run smoothly some codes of Machine Learning. I opted for `Python` as the main programming language, and for `Jupyter Notebook` as the main development environment. The host OS is `Ubuntu`.
+This repository is a ready-to-run `Docker` image which is built on top of `Python` as the main programming language, and `Jupyter Notebook` as the interactive computing tool.
 
-The latest image is built upon every push to this repo. Every update is available at [dockerhub](https://hub.docker.com/) via [abmhamdi/mlpy](https://hub.docker.com/repository/docker/abmhamdi/mlpy)
+**GitHub Actions** build and push this image to [dockerhub](https://hub.docker.com/). Every update is available at [abmhamdi/mlpy](https://hub.docker.com/repository/docker/abmhamdi/mlpy)
