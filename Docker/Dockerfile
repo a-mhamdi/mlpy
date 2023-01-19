@@ -11,16 +11,18 @@ ENV USER_HOME_DIR=/home/${USER}
 ARG WORKING_DIR=${USER_HOME_DIR}/repo/
 # Add user and set ownership
 RUN useradd --create-home --shell /bin/bash ${USER} \
-	&& chown -R ${USER} ${USER_HOME_DIR} \
-	&& mkdir -p ${WORKING_DIR}
+	&& chown -R ${USER} ${USER_HOME_DIR}
 # Change user & current working directory
 USER ${USER}
-WORKDIR ${WORKING_DIR}
+WORKDIR ${USER_HOME_DIR}
 # Copy needed files and datasets
 COPY ./Docker/datasets ${WORKING_DIR}/datasets
-# CREATE PYTHON VIRTUAL ENV
+# Create Python virtual env
 ENV VIRTUAL_ENV=${USER_HOME_DIR}/venv
 RUN python3 -m venv ${VIRTUAL_ENV}
+# Change working directory
+RUN mkdir -p ${WORKING_DIR}
+WORKDIR ${WORKING_DIR}
 # Activate venv
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 # Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
