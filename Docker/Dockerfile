@@ -6,7 +6,7 @@ LABEL version="latest"
 # Export port 1357
 EXPOSE 1357
 # Settings
-ENV USER=mhamdi
+ENV USERNAME=mhamdi
 ENV USER_HOME_DIR=/home/"${USERNAME}"
 ARG WORKING_DIR="${USER_HOME_DIR}/repo/"
 
