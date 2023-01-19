@@ -7,29 +7,34 @@ LABEL version="latest"
 EXPOSE 1357
 # Settings
 ENV USER=mhamdi
-ENV USER_HOME_DIR=/home/${USER}
-ARG WORKING_DIR=${USER_HOME_DIR}/repo/
+ENV USER_HOME_DIR=/home/"${USER}"
+ARG WORKING_DIR="${USER_HOME_DIR}/repo/"
+
 # Add user and set ownership
-RUN useradd --create-home --shell /bin/bash ${USER} \
-	&& chown -R ${USER} ${USER_HOME_DIR}
+RUN useradd --create-home --shell /bin/bash "${USER}" \
+	&& chown -R "${USER}" "${USER_HOME_DIR}" \ 
+	&& fix-permissions "${USER_HOME_DIR}"
+
 # Change user & current working directory
-USER ${USER}
-WORKDIR ${USER_HOME_DIR}
+USER "${USER}"
+WORKDIR "${USER_HOME_DIR}"
 # Copy needed files and datasets
-COPY ./Docker/datasets ${WORKING_DIR}/datasets
+# COPY ./Docker/datasets "${WORKING_DIR}"/datasets
 # Create Python virtual env
-ENV VIRTUAL_ENV=${USER_HOME_DIR}/venv
-RUN python3 -m venv ${VIRTUAL_ENV}
+ENV VIRTUAL_ENV="${USER_HOME_DIR}/venv"
+RUN python3 -m venv "${VIRTUAL_ENV}"
 # Change working directory
-RUN mkdir -p ${WORKING_DIR}
-WORKDIR ${WORKING_DIR}
+RUN mkdir -p "${WORKING_DIR}"
+WORKDIR "${WORKING_DIR}"
 # Activate venv
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 # Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
 RUN python3 -m pip install --upgrade pip
-# Install packages
-RUN python3 -m pip install ipython jupyterlab # Interactive tools
-RUN python3 -m pip install numpy scipy pandas matplotlib seaborn sklearn # ML APIs
-RUN python3 -m pip install tensorflow keras # ANN API
+# Install packages: Interactive tools, ML and ANN APIs
+RUN python3 -m pip install ipython jupyterlab
+				# numpy scipy pandas matplotlib seaborn sklearn # ML APIs
+				# tensorflow keras # ANN API
+
+RUN fix-permissions "${WORKING_DIR}"
 # Default command: Jupyter Lab
 CMD jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 1357 --allow-root --no-browser
