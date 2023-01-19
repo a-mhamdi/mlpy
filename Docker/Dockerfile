@@ -17,7 +17,7 @@ RUN useradd --create-home --shell /bin/bash ${USER} \
 USER ${USER}
 WORKDIR ${WORKING_DIR}
 # Copy needed files and datasets
-COPY ./datasets/ ${WORKING_DIR}/datasets/
+COPY ./Docker/datasets ${WORKING_DIR}/datasets
 # CREATE PYTHON VIRTUAL ENV
 ENV VIRTUAL_ENV=${USER_HOME_DIR}/venv
 RUN python3 -m venv ${VIRTUAL_ENV}
