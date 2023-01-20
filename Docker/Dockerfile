@@ -18,7 +18,7 @@ USER "${USERNAME}"
 WORKDIR "${USER_HOME_DIR}"
 # Copy needed files and datasets
 RUN mkdir -p "${WORKING_DIR}"
-# COPY ./datasets "${WORKING_DIR}"/datasets
+COPY ./Codes/Python/datasets "${WORKING_DIR}"/datasets
 # Create Python virtual env
 ENV VIRTUAL_ENV="${USER_HOME_DIR}/venv"
 RUN python3 -m venv "${VIRTUAL_ENV}"
