@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+  mlpy:
+    image: abmhamdi/mlpy
+    ports:
+      - "2468:8888"
+    volumes:
+      - ./:/home/mhamdi/work/

@@ -31,4 +31,5 @@ RUN python3 -m pip install --upgrade pip
 # Install packages: Interactive tools, ML and ANN APIs
 RUN python3 -m pip install ipython jupyterlab numpy scipy pandas matplotlib seaborn sklearn tensorflow keras
 # Default command: Jupyter Lab
-CMD jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 1357 --allow-root --no-browser
+ENTRYPOINT jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 1357 --allow-root --no-browser
+
