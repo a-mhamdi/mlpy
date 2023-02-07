@@ -3,7 +3,7 @@ FROM python:3.9
 # Metadata
 LABEL org.opencontainers.image.authors="A. Mhamdi"
 LABEL version="latest"
-# Export port 1357
+# Expose port 1357
 EXPOSE 1357
 # Settings
 ENV USERNAME=mhamdi

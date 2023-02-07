@@ -4,6 +4,4 @@ services:
   mlpy:
     image: abmhamdi/mlpy
     ports:
-      - "2468:8888"
-    volumes:
-      - ./:/home/mhamdi/work/
+      - "1357:1357"
