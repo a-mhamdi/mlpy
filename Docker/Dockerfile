@@ -20,16 +20,17 @@ WORKDIR "${USER_HOME_DIR}"
 RUN mkdir -p "${WORKING_DIR}"
 COPY ./Codes/Python/datasets "${WORKING_DIR}"/datasets
 # Create Python virtual env
-ENV VIRTUAL_ENV="${USER_HOME_DIR}/venv"
+ENV VIRTUAL_ENV="${USER_HOME_DIR}/pvenv"
 RUN python3 -m venv "${VIRTUAL_ENV}"
 # Change working directory
 WORKDIR "${WORKING_DIR}"
+COPY ./Codes/Python/requirements.txt requirements.txt
 # Activate venv
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 # Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
 RUN python3 -m pip install --upgrade pip
 # Install packages: Interactive tools, ML and ANN APIs
-RUN python3 -m pip install ipython jupyterlab numpy scipy pandas matplotlib seaborn sklearn tensorflow keras
+RUN python3 -m pip install -r requirements.txt
 # Default command: Jupyter Lab
 ENTRYPOINT jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 1357 --allow-root --no-browser
 

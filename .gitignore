@@ -1,6 +1,6 @@
 *.wakatime-project
 
 # Virtual Environment
-**/venv/
+**/pvenv/
 
 Makefile
