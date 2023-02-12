@@ -18,19 +18,19 @@ USER "${USERNAME}"
 WORKDIR "${USER_HOME_DIR}"
 # Copy needed files and datasets
 RUN mkdir -p "${WORKING_DIR}"
-COPY ./Codes/Python/datasets "${WORKING_DIR}"/datasets
-# Create Python virtual env
-ENV VIRTUAL_ENV="${USER_HOME_DIR}/pvenv"
-RUN python3 -m venv "${VIRTUAL_ENV}"
 # Change working directory
 WORKDIR "${WORKING_DIR}"
-COPY ./Codes/Python/requirements.txt requirements.txt
+COPY ./Codes/Python/datasets "${WORKING_DIR}"/datasets
+# Create Python virtual env
+ENV VIRTUAL_ENV="${WORKING_DIR}/pvenv"
+RUN python3 -m venv "${VIRTUAL_ENV}"
+COPY ./Codes/Python/requirements.txt "${VIRTUAL_ENV}"/requirements.txt
 # Activate venv
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 # Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
 RUN python3 -m pip install --upgrade pip
 # Install packages: Interactive tools, ML and ANN APIs
-RUN python3 -m pip install -r requirements.txt
+RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
 # Default command: Jupyter Lab
 ENTRYPOINT jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 1357 --allow-root --no-browser
 
