@@ -4,3 +4,4 @@
 **/pvenv/
 
 Makefile
+Codes/Python/.vscode/*
