@@ -9,7 +9,7 @@ This repository contains slides, labs and code examples for using `Python` to im
 
 To run the code, you will need to first pull the `Docker` image by running the following command:
 
-```
+```zsh
 docker pull abmhamdi/mlpy
 ```
 
