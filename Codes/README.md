@@ -8,6 +8,8 @@ pip install requirements.txt
 
 Recommended for users with little `Python` experience or users having problems with the other options. No need to install anything on your machine. Click this button [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/a-mhamdi/mlpy/main?labpath=Codes%2FPython)
 
+Other code samples can be found [here](https://www.github.com/a-mhamdi/cosnip) -> _Python_ -> _ml_.
+
 Some of the materials presented here are inspired by the following references:
 
 - [Machine Learning A-Z](https://www.superdatascience.com/pages/machine-learning)
