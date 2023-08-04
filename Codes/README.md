@@ -1,7 +1,7 @@
 If you are not running the docker image I provided, it is advisable to activate a virtual environment and install all the required packages using the file `requirements.txt`.
 
 ```zsh
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 **Plug-and-play solution** 
