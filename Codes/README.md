@@ -8,7 +8,7 @@ pip install -r Python/requirements.txt
 
 Recommended for users with little `Python` experience or users having problems with the other options. No need to install anything on your machine. Click this button [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/a-mhamdi/mlpy/main?labpath=Codes%2FPython)
 
-Other code samples can be found [here](https://www.github.com/a-mhamdi/Showcasing-ML) -> _Python_.
+Other code samples can be found [here](https://www.github.com/a-mhamdi/journey-into-ML) -> _Python_.
 
 Some of the materials presented here are inspired by the following references:
 
