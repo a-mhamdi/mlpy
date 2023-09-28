@@ -59,6 +59,7 @@ jupyter_server_terminals==0.4.4
 jupyter_server_ydoc==0.6.1
 jupyterlab==3.6.1
 jupyterlab-pygments==0.2.2
+jupyterlab-visualpython==2.5.0
 jupyterlab-widgets==3.0.9
 jupyterlab_server==2.19.0
 keras==2.11.0
@@ -136,7 +137,6 @@ traitlets==5.9.0
 typing_extensions==4.4.0
 uri-template==1.2.0
 urllib3==1.26.14
-visualpython==2.5.0
 wcwidth==0.2.6
 webcolors==1.12
 webencodings==0.5.1
