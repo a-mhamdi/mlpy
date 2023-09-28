@@ -13,4 +13,4 @@ Other code samples can be found [here](https://www.github.com/a-mhamdi/journey-i
 Some of the materials presented here are inspired by the following references:
 
 - [Machine Learning A-Z](https://www.superdatascience.com/pages/machine-learning)
-- [ML For Begineers](https://github.com/microsoft/ML-For-Beginners)
+- [ML For Beginners](https://github.com/microsoft/ML-For-Beginners)
