@@ -2,7 +2,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=standardLinux32gb&repo=537615866&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=EuropeWest)
 
-This repository contains slides, labs, and code examples for using `Python` to implement some **machine learning** related algorithms. Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment.
+This repository contains slides, labs, and code samples for using `Python` to implement some **machine learning** related algorithms. Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment.
 
 [![MLPY CI](https://github.com/a-mhamdi/mlpy/actions/workflows/docker-image.yml/badge.svg)](https://github.com/a-mhamdi/mlpy/actions/workflows/docker-image.yml)
 [![Docker Version](https://img.shields.io/docker/v/abmhamdi/mlpy?sort=semver)](https://hub.docker.com/r/abmhamdi/mlpy)
