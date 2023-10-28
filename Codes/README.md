@@ -4,6 +4,8 @@ If you are not running the docker image I provided, it is advisable to activate 
 pip install -r Python/requirements.txt
 ```
 
+For a more elegant way to render the notebooks, replace `github.com` in the URL of the notebook you wish to render with `nbsanity.com` in the browser.
+
 **Plug-and-play solution** 
 
 Recommended for users with little `Python` experience or users having problems with the other options. No need to install anything on your machine. Click this button [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/a-mhamdi/mlpy/main?labpath=Codes%2FPython)
