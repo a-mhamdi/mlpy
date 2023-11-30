@@ -2,9 +2,8 @@ name: MLPY-CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    paths:
+      - 'Codes/Python/**'
 
 jobs:
 
