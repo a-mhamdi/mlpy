@@ -1,4 +1,4 @@
-## Machine Learning with Python
+# Machine Learning with Python
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=standardLinux32gb&repo=537615866&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=EuropeWest)
 
@@ -7,7 +7,7 @@
 
 This repository contains slides, labs, and code samples for using `Python` to implement some **machine learning** related algorithms. 
 
-### Included Algorithms
+## Included Algorithms
 The repository includes the implementation of the following algorithms:
 >1. Linear Regression
 >1. Logistic Regression
@@ -15,7 +15,7 @@ The repository includes the implementation of the following algorithms:
 >1. K-MEANS
 >1. ANN
 
-### Prerequisites
+## Prerequisites
 
 Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment. 
 
@@ -29,5 +29,12 @@ docker pull abmhamdi/mlpy
 
 This may take a while, as it will download and install all necessary dependencies.
 
-### License
+## How to control the containers:
+
+* ```docker-compose up -d``` starts the container in detached mode
+* ```docker-compose down``` stops and destroys the container
+
+Services can be run by typing the command `docker-compose up`. This will start the `Jupyter Lab` on [http://localhost:2468](http://localhost:2468) and you should be able to use `Python` from within the notebook by starting a new `Python` notebook. You can parallelly start `Marimo` on [http://localhost:1357](http://localhost:1357).
+
+## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
