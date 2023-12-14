@@ -31,6 +31,7 @@ ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 RUN python3 -m pip install --upgrade pip
 # Install packages: Interactive tools, ML and ANN APIs
 RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
-# Default command: Jupyter Lab
-ENTRYPOINT jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 1357 --allow-root --no-browser
+
+# Default command
+CMD python
 
