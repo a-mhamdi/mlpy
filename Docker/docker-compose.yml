@@ -1,7 +1,11 @@
 version: "3.3"
 
 services:
-  mlpy:
-    image: abmhamdi/mlpy
-    ports:
-      - "1357:1357"
+	jupyter:
+		image: abmhamdi/mlpy
+		ports:
+		  - "2468:2468"
+	marimo:
+		image: abmhamdi/mlpy
+		ports:
+		  - "1357:1357"
