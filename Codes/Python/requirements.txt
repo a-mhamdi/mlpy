@@ -71,7 +71,7 @@ jupyterlab_server==2.25.2
 keras==2.11.0
 kiwisolver==1.4.4
 libclang==15.0.6.1
-marimo==0.1.63
+marimo==0.1.66
 Markdown==3.5.1
 MarkupSafe==2.1.2
 matplotlib==3.6.3
