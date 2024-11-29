@@ -3,7 +3,7 @@ FROM python:3.10.12
 # Metadata
 LABEL org.opencontainers.image.authors="A. Mhamdi"
 LABEL version="latest"
-# Expose ports 1357 2468
+# MARIMO @ 0.0.0.0:1357 and Jupyter Lab @ 0.0.0.0:2468
 EXPOSE 1357 2468
 # Settings
 ENV USERNAME=mhamdi
@@ -27,8 +27,6 @@ COPY ./Codes/Python/requirements.txt "${VIRTUAL_ENV}"/requirements.txt
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 # Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
 RUN python3 -m pip install --upgrade pip
-# Install packages: Interactive tools, ML and ANN APIs
-RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
 # Install packages: Interactive tools, ML and ANN APIs
 RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
 # Default command
