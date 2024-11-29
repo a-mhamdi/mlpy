@@ -1,5 +1,5 @@
 # Base image
-FROM python:3.9
+FROM python:3.10.12
 # Metadata
 LABEL org.opencontainers.image.authors="A. Mhamdi"
 LABEL version="latest"
