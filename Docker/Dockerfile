@@ -8,11 +8,9 @@ EXPOSE 1357 2468
 # Settings
 ENV USERNAME=mhamdi
 ENV USER_HOME_DIR=/home/"${USERNAME}"
-ARG WORKING_DIR="${USER_HOME_DIR}/repo/"
-
+ARG WORKING_DIR="${USER_HOME_DIR}/work/"
 # Add user and set ownership
 RUN useradd -ms /bin/bash  -p $(echo "${USERNAME}" | openssl passwd -1 -stdin) "${USERNAME}"
-
 # Change user & current working directory
 USER "${USERNAME}"
 WORKDIR "${USER_HOME_DIR}"
@@ -22,7 +20,7 @@ RUN mkdir -p "${WORKING_DIR}"
 WORKDIR "${WORKING_DIR}"
 COPY ./Codes/Python/datasets "${WORKING_DIR}"/datasets
 # Create Python virtual env
-ENV VIRTUAL_ENV="${WORKING_DIR}/pvenv"
+ENV VIRTUAL_ENV="/pvenv"
 RUN python3 -m venv "${VIRTUAL_ENV}"
 COPY ./Codes/Python/requirements.txt "${VIRTUAL_ENV}"/requirements.txt
 # Activate venv
@@ -31,7 +29,9 @@ ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 RUN python3 -m pip install --upgrade pip
 # Install packages: Interactive tools, ML and ANN APIs
 RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
-
+# Install packages: Interactive tools, ML and ANN APIs
+RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
 # Default command
 CMD python
+
 
