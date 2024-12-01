@@ -1,7 +1,7 @@
 *.wakatime-project
 
 # Virtual Environment
-**/pvenv/
+**/.venv/
 
 Makefile
 Codes/Python/.vscode/*
