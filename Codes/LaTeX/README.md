@@ -1,10 +1,10 @@
-![LaTeX](./LaTeX.png)
+![LaTeX](./latex.png)
 
 ### Installation
 
 A quick guide on how to install LaTeX distribution depending on the OS your machine is running.
 
-![Installation Guide](How to install LaTeX.gif)
+![Installation Guide](./images/man-latex.gif)
 
 <center>
 
