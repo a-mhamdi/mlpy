@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
-COPY COPY ./Codes/Python/requirements.txt .
+COPY ./Codes/Python/requirements.txt .
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -39,6 +39,6 @@ ENV PYTHONUNBUFFERED=1
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 WORKDIR /app
-COPY COPY ./Codes/Python/datasets/ datasets/
+COPY ./Codes/Python/datasets/ datasets/
 
 CMD [ "/bin/bash" ]
