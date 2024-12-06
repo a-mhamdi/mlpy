@@ -1,35 +1,44 @@
 # Base image
-FROM python:3.10.12
+FROM python:3.10.12 AS builder
+
 # Metadata
-LABEL org.opencontainers.image.authors="A. Mhamdi"
+LABEL author="A. Mhamdi"
 LABEL version="latest"
-# MARIMO @ 0.0.0.0:1357 and Jupyter Lab @ 0.0.0.0:2468
-EXPOSE 1357 2468
-# Settings
-ENV USERNAME=mhamdi
-ENV USER_HOME_DIR=/home/"${USERNAME}"
-ARG WORKING_DIR="${USER_HOME_DIR}/work/"
-# Add user and set ownership
-RUN useradd -ms /bin/bash  -p $(echo "${USERNAME}" | openssl passwd -1 -stdin) "${USERNAME}"
-# Change user & current working directory
-USER "${USERNAME}"
-WORKDIR "${USER_HOME_DIR}"
-# Copy needed files and datasets
-RUN mkdir -p "${WORKING_DIR}"
-# Change working directory
-WORKDIR "${WORKING_DIR}"
-COPY ./Codes/Python/datasets "${WORKING_DIR}"/datasets
-# Create Python virtual env
-ENV VIRTUAL_ENV="/pvenv"
-RUN python3 -m venv "${VIRTUAL_ENV}"
-COPY ./Codes/Python/requirements.txt "${VIRTUAL_ENV}"/requirements.txt
-# Activate venv
+
+SHELL [ "/bin/bash", "-c" ]
+
+ENV VIRTUAL_ENV=/opt/venv
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+COPY COPY ./Codes/Python/requirements.txt .
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc libffi-dev libssl-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install `uv` for fast package management
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+RUN uv venv ${VIRTUAL_ENV}
+
+# Set the PATH to use the virtual environment
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
-# Update `pip` NOT(REQUIRED FOR PYTHON 3.10)
-RUN python3 -m pip install --upgrade pip
-# Install packages: Interactive tools, ML and ANN APIs
-RUN python3 -m pip install -r "${VIRTUAL_ENV}"/requirements.txt
-# Default command
-CMD python
+RUN uv pip install pip --upgrade
+RUN uv pip install --no-cache-dir -r requirements.txt
 
+FROM python:3.10.12 AS runtime
+COPY --from=builder /opt/venv /opt/venv
 
+ENV VIRTUAL_ENV=/opt/venv
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Activate `venv`
+ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
+
+WORKDIR /app
+COPY COPY ./Codes/Python/datasets/ datasets/
+
+CMD [ "/bin/bash" ]
