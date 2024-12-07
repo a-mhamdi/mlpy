@@ -1,5 +1,3 @@
-version: "3.3"
-
 services:
   jupyter:
     image: abmhamdi/mlpy
@@ -11,5 +9,5 @@ services:
     image: abmhamdi/mlpy
     ports:
       - "1357:1357"
-    command: marimo edit --port 1357 --headless
+    command: marimo edit --host 0.0.0.0 --port 1357 --headless --no-token
 

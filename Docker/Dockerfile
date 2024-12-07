@@ -1,9 +1,8 @@
-# Base image
-FROM python:3.10.12 AS builder
+###########################
+#= STAGE 1: BUILD STAGE =#
+##########################
 
-# Metadata
-LABEL author="A. Mhamdi"
-LABEL version="latest"
+FROM python:3.10.12 AS builder
 
 SHELL [ "/bin/bash", "-c" ]
 
@@ -11,34 +10,40 @@ ENV VIRTUAL_ENV=/opt/venv
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /app
-COPY ./Codes/Python/requirements.txt .
-
-# Install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc libffi-dev libssl-dev && \
+## Install build dependencies
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends gcc libffi-dev libssl-dev vim && \
     rm -rf /var/lib/apt/lists/*
 
-# Install `uv` for fast package management
+## Install `uv` for fast package management
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 RUN uv venv ${VIRTUAL_ENV}
 
-# Set the PATH to use the virtual environment
+## Set the PATH to use the virtual environment
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
-RUN uv pip install pip --upgrade
-RUN uv pip install --no-cache-dir -r requirements.txt
+COPY ../Codes/Python/requirements.txt /tmp/
+RUN uv pip install --no-cache-dir -r /tmp/requirements.txt
+
+############################
+#= STAGE 2: RUNTIME STAGE =#
+############################
 
 FROM python:3.10.12 AS runtime
 COPY --from=builder /opt/venv /opt/venv
 
+## Metadata
+LABEL author="A. Mhamdi"
+LABEL version="latest"
+
 ENV VIRTUAL_ENV=/opt/venv
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-
-# Activate `venv`
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 WORKDIR /app
-COPY ./Codes/Python/datasets/ datasets/
+COPY ../Codes/Python/datasets/ datasets/
+
+EXPOSE 1357 2468
 
 CMD [ "/bin/bash" ]
+
