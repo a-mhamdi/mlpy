@@ -32,7 +32,7 @@ FROM python:3.10.12 AS runtime
 COPY --from=builder /opt/venv /opt/venv
 
 ## Metadata
-LABEL author="A. Mhamdi"
+LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 LABEL version="latest"
 
 ENV VIRTUAL_ENV=/opt/venv
@@ -40,7 +40,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
-WORKDIR /app
+WORKDIR /workspace
 COPY ../Codes/Python/datasets/ datasets/
 
 EXPOSE 1357 2468
