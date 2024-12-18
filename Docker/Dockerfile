@@ -41,7 +41,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 WORKDIR /workspace
-COPY ../Codes/Python/datasets/ datasets/
+COPY ../Codes/Python/Datasets/ Datasets/
 
 EXPOSE 1357 2468
 
