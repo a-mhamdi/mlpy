@@ -92,7 +92,7 @@ def __(mo):
 
 @app.cell
 def __(pd):
-    df = pd.read_csv("../datasets/Churn_Modelling.csv")
+    df = pd.read_csv("../Datasets/Churn_Modelling.csv")
     return (df,)
 
 

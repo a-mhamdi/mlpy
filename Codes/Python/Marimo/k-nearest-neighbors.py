@@ -69,7 +69,7 @@ def _(mo):
 
 @app.cell
 def _(pd):
-    df = pd.read_csv('../datasets/Social_Network_Ads.csv')
+    df = pd.read_csv('../Datasets/Social_Network_Ads.csv')
     df.head()
     return (df,)
 

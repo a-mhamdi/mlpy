@@ -163,7 +163,7 @@ def __(mo):
 
 @app.cell
 def __(pd):
-    df_1 = pd.read_csv('../datasets/Data.csv')
+    df_1 = pd.read_csv('../Datasets/Data.csv')
     df_1.head()
     return (df_1,)
 

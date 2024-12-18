@@ -87,7 +87,7 @@ def __(mo):
 
 @app.cell
 def __(pd):
-    df = pd.read_csv('../datasets/50_Startups.csv')
+    df = pd.read_csv('../Datasets/50_Startups.csv')
     return (df,)
 
 
