@@ -29,7 +29,7 @@ def _(mo):
         1. $K$-Means clustering;
         1. Principal Component Analysis (PCA); and
         1. Autoencoders.
-       
+
         These algorithms can be used for tasks such as image compression, anomaly detection, and customer segmentation.
         """
     )
@@ -192,8 +192,15 @@ def _(mo):
 
 
 @app.cell
-def _(KMeans, X):
-    kmeans_1 = KMeans(n_clusters=5, init='k-means++', n_init='auto')
+def _(mo):
+    slider = mo.ui.slider(1, 10, 1, 5)
+    slider
+    return (slider,)
+
+
+@app.cell
+def _(KMeans, X, slider):
+    kmeans_1 = KMeans(n_clusters=slider.value, init='k-means++', n_init='auto')
     y_pred = kmeans_1.fit_predict(X)
     return kmeans_1, y_pred
 
@@ -222,6 +229,7 @@ def _(X, centers, plt, y_pred):
     ax.set_xlabel('Annual Income')
     ax.set_ylabel('Spending Score')
     ax.grid()
+    plt.show()
     return ax, fig, legend, scatter
 
 

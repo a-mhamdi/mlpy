@@ -139,8 +139,15 @@ def _():
 
 
 @app.cell
-def _(KNeighborsClassifier):
-    clf = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)
+def _(mo):
+    slider = mo.ui.slider(1, 10, 1, 5)
+    slider
+    return (slider,)
+
+
+@app.cell
+def _(KNeighborsClassifier, slider):
+    clf = KNeighborsClassifier(n_neighbors=slider.value, metric='minkowski', p=2)
     return (clf,)
 
 
