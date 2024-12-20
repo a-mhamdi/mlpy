@@ -1,3 +1,0 @@
-
-![Marimo](marimo.svg)
-

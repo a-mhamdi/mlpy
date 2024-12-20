@@ -1,3 +1,0 @@
-
-![Jupyter](jupyter.svg)
-
