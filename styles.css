@@ -211,7 +211,7 @@ footer {
 .container {
     display: flex;
     /* Use Flexbox for side-by-side alignment */
-    gap: 100px;
+    gap: 512px;
     /* Optional: Adds spacing between the divs */
 }
 
