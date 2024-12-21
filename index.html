@@ -3,6 +3,7 @@
 
 <head>
     <title>iframe Example</title>
+    <script src="js/display-markdown.min.js"></script>
 </head>
 
 <body>
@@ -29,6 +30,14 @@
 
     <iframe id="frame" src="about:blank" style="width:100%; height:500px; border:1px solid #ccc;">
     </iframe>
+
+    <div id="readme"></div>
+
 </body>
+
+<script>
+    const readme = document.getElementById('readme');
+    readme.innerHTML = displayMarkdown('README.md');
+</script>
 
 </html>
