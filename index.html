@@ -12,7 +12,7 @@
 
         .dropdown-button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #424222;
             color: white;
             border: none;
             cursor: pointer;
@@ -45,7 +45,7 @@
         }
 
         .dropdown:hover .dropdown-button {
-            background-color: #45a049;
+            background-color: #9ea045;
         }
 
         .iframe-container {
@@ -61,18 +61,18 @@
     <div class="dropdown">
         <button class="dropdown-button">Select Page</button>
         <div class="dropdown-content">
-            <a href="#" onclick="loadPage('data-processing.html')">Data processing</a>
-            <a href="#" onclick="loadPage('simple-linear-regression.html')">Simple Linear Regression</a>
-            <a href="#" onclick="loadPage('multiple-linear-regression.html')">Multiple Linear Regression</a>
-            <a href="#" onclick="loadPage('polynomial-regression.html')">Polynomial Regression</a>
-            <a href="#" onclick="loadPage('logistic-regression.html')">Logistic Regression</a>
-            <a href="#" onclick="loadPage('k-nearest-neighbors.html')">k-Nearest Neighbors</a>
-            <a href="#" onclick="loadPage('K-means-clustering.html')">K-Means Clustering</a>
-            <a href="#" onclick="loadPage('artificial-neural-network.html')">Artificial Neural Network</a>
+            <a href="#" onclick="loadPage('src/data-processing.html')">Data processing</a>
+            <a href="#" onclick="loadPage('src/simple-linear-regression.html')">Simple Linear Regression</a>
+            <a href="#" onclick="loadPage('src/multiple-linear-regression.html')">Multiple Linear Regression</a>
+            <a href="#" onclick="loadPage('src/polynomial-regression.html')">Polynomial Regression</a>
+            <a href="#" onclick="loadPage('src/logistic-regression.html')">Logistic Regression</a>
+            <a href="#" onclick="loadPage('src/k-nearest-neighbors.html')">k-Nearest Neighbors</a>
+            <a href="#" onclick="loadPage('src/K-means-clustering.html')">K-Means Clustering</a>
+            <a href="#" onclick="loadPage('src/artificial-neural-network.html')">Artificial Neural Network</a>
         </div>
     </div>
 
-    <iframe id="contentFrame" class="iframe-container" src="data-processing.html"></iframe>
+    <iframe id="contentFrame" class="iframe-container" src="src/data-processing.html"></iframe>
 
     <script>
         function loadPage(url) {
