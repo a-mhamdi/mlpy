@@ -12,6 +12,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .gradient-bg {
     position: fixed;
     top: 0;
@@ -39,8 +40,13 @@ body {
 }
 
 @keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-100vh) rotate(360deg); }
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
 }
 
 .navbar {
@@ -196,6 +202,17 @@ footer {
 
 .dropdown:hover .dropdown-button {
     background-color: #45a049;
+}
+
+.radio-buttons {
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    /* Use Flexbox for side-by-side alignment */
+    gap: 100px;
+    /* Optional: Adds spacing between the divs */
 }
 
 .iframe-container {
