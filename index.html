@@ -1,69 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Machine Learning with Python</title>
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .dropdown-button {
-            padding: 10px 20px;
-            background-color: #224242;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            min-width: 200px;
-            /* Made button wider */
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 300px;
-            /* Increased from 160px to 300px */
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 4px;
-            white-space: nowrap;
-            /* Prevents text from wrapping */
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            /* Adds ... if text is too long */
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-button {
-            background-color: #45a049;
-        }
-
-        .iframe-container {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Machine Learning with Python</title>   
 </head>
+
+<div class="gradient-bg"></div>
+    <div class="particles" id="particles"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="a-mhamdi">About</a></li>
+            <li><a href="jlai">JLAI</a></li>
+            <li><a href="mlpy">MLPY</a></li>
+        </ul>
+    </nav>
 
 <body>
     <div class="dropdown">
