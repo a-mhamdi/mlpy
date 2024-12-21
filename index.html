@@ -1,43 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>iframe Example</title>
-    <script src="js/display-markdown.min.js"></script>
-</head>
-
-<body>
-    <button onclick="document.getElementById('frame').src='src/artificial-neural-network.html'">
-        Load Page
-    </button>
-
+    <meta charset="UTF-8">
     <style>
-        .button {
+        .dropdown {
+            position: relative;
             display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .dropdown-button {
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
-            text-decoration: none;
-            border-radius: 4px;
             border: none;
             cursor: pointer;
+            border-radius: 4px;
         }
 
-        .button:hover {
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-button {
             background-color: #45a049;
         }
+
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            /* Adjust height as needed */
+            border: 1px solid #ccc;
+        }
     </style>
+</head>
 
-    <iframe id="frame" src="about:blank" style="width:100%; height:500px; border:1px solid #ccc;">
-    </iframe>
+<body>
+    <div class="dropdown">
+        <button class="dropdown-button">Select Page</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadPage('data-processing.html')">Data processing</a>
+            <a href="#" onclick="loadPage('simple-linear-regression.html')">Simple Linear Regression</a>
+            <a href="#" onclick="loadPage('multiple-linear-regression.html')">Multiple Linear Regression</a>
+            <a href="#" onclick="loadPage('polynomial-regression.html')">Polynomial Regression</a>
+            <a href="#" onclick="loadPage('logistic-regression.html')">Logistic Regression</a>
+            <a href="#" onclick="loadPage('k-nearest-neighbors.html')">k-Nearest Neighbors</a>
+            <a href="#" onclick="loadPage('K-means-clustering.html')">K-Means Clustering</a>
+            <a href="#" onclick="loadPage('artificial-neural-network.html')">Artificial Neural Network</a>
+        </div>
+    </div>
 
-    <div id="readme"></div>
+    <iframe id="contentFrame" class="iframe-container" src="data-processing.html"></iframe>
 
+    <script>
+        function loadPage(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+    </script>
 </body>
-
-<script>
-    const readme = document.getElementById('readme');
-    readme.innerHTML = displayMarkdown('README.md');
-</script>
 
 </html>
