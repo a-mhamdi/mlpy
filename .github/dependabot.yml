@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "uv pip" # See documentation for possible values
+  - package-ecosystem: "pip" # See documentation for possible values
     directory: "/Codes/Python" # Location of package manifests
     schedule:
       interval: "weekly"
