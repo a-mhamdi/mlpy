@@ -2,6 +2,8 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=standardLinux32gb&repo=537615866&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=EuropeWest)
 
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/a-mhamdi/mlpy/blob/b248c044c15dabac5eb3953e691d9bdf8251c5c4/README.md)
+
 [![MLPY-CI](https://github.com/a-mhamdi/mlpy/actions/workflows/mlpy.yml/badge.svg)](https://github.com/a-mhamdi/mlpy/actions/workflows/mlpy.yml)
 [![Docker Version](https://img.shields.io/docker/v/abmhamdi/mlpy?sort=semver)](https://hub.docker.com/r/abmhamdi/mlpy)
 
