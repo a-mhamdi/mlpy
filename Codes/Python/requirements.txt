@@ -64,6 +64,7 @@ jupyterlab==4.3.2
 jupyterlab-git==0.50.2
 jupyterlab-pygments==0.3.0
 jupyterlab-server==2.27.3
+jupyterlab-visualpython==3.0.2
 jupyterlab-widgets==3.0.13
 keras==3.7.0
 kiwisolver==1.4.7
