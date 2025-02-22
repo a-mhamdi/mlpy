@@ -34,7 +34,7 @@ This may take a while, as it will download and install all necessary dependencie
 * ```docker-compose up -d``` starts the container in detached mode
 * ```docker-compose down``` stops and destroys the container
 
-Services can be run by typing the command `docker-compose up`. This will start the `Jupyter Lab` on [http://localhost:2468](http://localhost:2468) and you should be able to use `Python` from within the notebook by starting a new `Python` notebook. You can parallelly start `Marimo` on [http://localhost:1357](http://localhost:1357).
+Services can be run by typing the command `docker-compose up`. This will start the `Jupyter Lab` on [http://localhost:2468](http://localhost:2468), and you should be able to use `Python` from within the notebook by starting a new `Python` notebook. You can parallelly start `Marimo` on [http://localhost:1357](http://localhost:1357).
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
