@@ -21,7 +21,7 @@ RUN uv venv ${VIRTUAL_ENV}
 
 ## Set the PATH to use the virtual environment
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
-COPY ../Codes/Python/requirements.txt /tmp/
+COPY Codes/Python/requirements.txt /tmp/
 RUN uv pip install --no-cache-dir -r /tmp/requirements.txt
 
 ############################
@@ -41,7 +41,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 WORKDIR /workspace
-COPY ../Codes/Python/Datasets/ Datasets/
+COPY Codes/Python/Datasets/ Datasets/
 
 EXPOSE 1357 2468
 
