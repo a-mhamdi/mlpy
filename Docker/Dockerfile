@@ -43,6 +43,7 @@ ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 WORKDIR /workspace
 COPY Codes/Python/Datasets/ Datasets/
 COPY Codes/Python/Jupyter/ Jupyter/
+COPY Codes/Python/Marimo/ Marimo/
 
 EXPOSE 1357 2468
 
