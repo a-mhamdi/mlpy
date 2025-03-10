@@ -21,13 +21,14 @@ Codes run on top of a `Docker` image, ensuring a consistent and reproducible env
 
 <img src="https://raw.githubusercontent.com/a-mhamdi/mlpy/main/Attention.svg" alt="Attention" width="16"/> You will need to have `Docker` installed on your machine. You can download it from the [Docker website](https://hub.docker.com).
 
-To run the code, you will need to first pull the `Docker` image by running the following command:
-
-```zsh
-docker pull abmhamdi/mlpy
-```
-
-This may take a while, as it will download and install all necessary dependencies.
+> [!NOTE]
+> To run the code, you will need to first pull the `Docker` image by running the following command:
+> 
+> ```zsh
+> docker pull abmhamdi/mlpy
+> ```
+> 
+> This may take a while, as it will download and install all necessary dependencies.
 
 ## How to control the containers:
 
