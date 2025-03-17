@@ -79,7 +79,7 @@ mdurl==0.1.2
 mistune==3.0.2
 ml-dtypes==0.4.1
 namex==0.0.8
-narwhals==1.19.1
+narwhals==1.30.0
 nbclient==0.10.2
 nbconvert==7.16.4
 nbdime==4.0.2
