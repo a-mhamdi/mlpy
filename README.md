@@ -19,7 +19,7 @@ The repository includes the implementation of the following algorithms:
 
 Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment. 
 
-> [!CAUTION]
+> [!IMPORTANT]
 >
 > You will need to have `Docker` installed on your machine. You can download it from the [Docker website](https://hub.docker.com).
 
