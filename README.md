@@ -4,6 +4,7 @@
 
 [![MLPY-CI](https://github.com/a-mhamdi/mlpy/actions/workflows/mlpy.yml/badge.svg)](https://github.com/a-mhamdi/mlpy/actions/workflows/mlpy.yml)
 [![Docker Version](https://img.shields.io/docker/v/abmhamdi/mlpy?sort=semver)](https://hub.docker.com/r/abmhamdi/mlpy)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/a-mhamdi/mlpy)
 
 This repository contains slides, labs, and code samples for using `Python` to implement some **machine learning** related algorithms. 
 
