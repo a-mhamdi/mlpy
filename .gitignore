@@ -7,3 +7,4 @@ Makefile
 Codes/Python/.vscode/*
 
 Codes/Python/Marimo/export2html.sh
+**/.idea
