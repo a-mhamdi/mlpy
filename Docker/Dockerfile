@@ -4,13 +4,12 @@
 
 FROM python:3.10.12-alpine AS builder
 
-SHELL [ "/bin/bash", "-c" ]
+# SHELL [ "/bin/bash", "-c" ]
 
 ENV VIRTUAL_ENV=/opt/venv
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-## Install build dependencies
 ## Install build dependencies
 RUN apk update && \
     apk add --no-cache gcc libffi-dev libressl-dev vim && \
