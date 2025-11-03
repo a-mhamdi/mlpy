@@ -2,7 +2,7 @@
 #= STAGE 1: BUILD STAGE =#
 ##########################
 
-FROM python:3.10.12 AS builder
+FROM python:3.10.12-alpine AS builder
 
 SHELL [ "/bin/bash", "-c" ]
 
@@ -11,9 +11,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 ## Install build dependencies
-RUN apt-get update && \
-	apt-get install -y --no-install-recommends gcc libffi-dev libssl-dev vim && \
-    rm -rf /var/lib/apt/lists/*
+## Install build dependencies
+RUN apk update && \
+    apk add --no-cache gcc libffi-dev libressl-dev vim && \
+    rm -rf /var/cache/apk/*
 
 ## Install `uv` for fast package management
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
@@ -28,7 +29,7 @@ RUN uv pip install --no-cache-dir -r /tmp/requirements.txt
 #= STAGE 2: RUNTIME STAGE =#
 ############################
 
-FROM python:3.10.12 AS runtime
+FROM python:3.10.12-alpine AS runtime
 COPY --from=builder /opt/venv /opt/venv
 
 ## Metadata
