@@ -16,7 +16,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 ## Install `uv` for fast package management
-COPY --from=ghcr.io/astral-sh/uv:python3.10-12-alpine /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:python3.10-bookworm-slim /uv /uvx /bin/
 RUN uv venv ${VIRTUAL_ENV}
 
 ## Set the PATH to use the virtual environment
