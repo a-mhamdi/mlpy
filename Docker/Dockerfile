@@ -20,7 +20,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ## Install `uv` for fast package management
-COPY --from=ghcr.io/astral-sh/uv:python3.10-bookworm-slim /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:python3.12-bookworm-slim /uv /uvx /bin/
 
 # Make the binaries executable
 RUN chmod +x /bin/uv /bin/uvx
