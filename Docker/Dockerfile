@@ -9,7 +9,7 @@ FROM python:3.12-slim-bookworm AS builder
 ENV VIRTUAL_ENV=/opt/venv \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PATH="${VIRTUAL_ENV}/bin:$PATH"
+    PATH="/opt/venv/bin:$PATH"
 
 # Install build dependencies
 RUN apt-get update && \
@@ -48,7 +48,7 @@ LABEL version="latest"
 ENV VIRTUAL_ENV=/opt/venv \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PATH="${VIRTUAL_ENV}/bin:$PATH"
+    PATH="/opt/venv/bin:$PATH"
 
 WORKDIR /workspace
 COPY Codes/Python/Datasets/ Datasets/
