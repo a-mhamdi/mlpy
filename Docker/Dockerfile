@@ -2,7 +2,7 @@
 #= STAGE 1: BUILD STAGE =#
 ##########################
 
-FROM python:3.12-bookworm-slim AS builder
+FROM python:3.12-slim-bookworm AS builder
 
 # SHELL [ "/bin/bash", "-c" ]
 
@@ -38,7 +38,7 @@ RUN apt-get update && \
 #= STAGE 2: RUNTIME STAGE =#
 ############################
 
-FROM python:3.12-bookworm-slim AS runtime
+FROM python:3.12-slim-bookworm AS runtime
 COPY --from=builder /opt/venv /opt/venv
 
 ## Metadata
