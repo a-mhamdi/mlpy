@@ -6,9 +6,9 @@ FROM python:3.10.12-bookworm-slim AS builder
 
 # SHELL [ "/bin/bash", "-c" ]
 
-ENV VIRTUAL_ENV=/opt/venv
-    PYTHONDONTWRITEBYTECODE=1
-    PYTHONUNBUFFERED=1
+ENV VIRTUAL_ENV=/opt/venv \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
     PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 # Install build dependencies
@@ -16,8 +16,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y \
     gcc \
     libffi-dev \
-    libssl-dev \
-    vim && \
+    libssl-dev && \
     rm -rf /var/lib/apt/lists/*
 
 ## Install `uv` for fast package management
@@ -28,7 +27,6 @@ RUN chmod +x /bin/uv /bin/uvx
 
 RUN uv venv ${VIRTUAL_ENV}
 
-## Set the PATH to use the virtual environment
 COPY Codes/Python/requirements.txt /tmp/
 RUN uv pip install --no-cache-dir -r /tmp/requirements.txt
 
@@ -47,9 +45,9 @@ COPY --from=builder /opt/venv /opt/venv
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 LABEL version="latest"
 
-ENV VIRTUAL_ENV=/opt/venv
-    PYTHONDONTWRITEBYTECODE=1
-    PYTHONUNBUFFERED=1
+ENV VIRTUAL_ENV=/opt/venv \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
     PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 WORKDIR /workspace
