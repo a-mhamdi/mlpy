@@ -3,11 +3,11 @@ services:
     image: abmhamdi/mlpy
     ports:
       - "2468:2468"
-    command: jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 2468 --allow-root --no-browser
+    command: sh -c "cd Jupyter && jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 2468 --allow-root --no-browser"
 
   marimo:
     image: abmhamdi/mlpy
     ports:
       - "1357:1357"
-    command: marimo edit --host 0.0.0.0 --port 1357 --headless --no-token
+    command: sh -c "cd Marimo && marimo edit --host 0.0.0.0 --port 1357 --headless --no-token"
 
