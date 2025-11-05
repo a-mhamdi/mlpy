@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.8"
+__generated_with = "0.10.4"
 app = marimo.App()
 
 
@@ -799,14 +799,8 @@ def _(mo):
 @app.cell
 def _():
     from matplotlib import pyplot as plt
-    plt.style.use('dark_background')
     plt.rc('figure', figsize=(6, 4))
-
-    from matplotlib import rcParams
-    rcParams['font.family'] = 'Monospace'
-    rcParams['font.size'] = 8
-    rcParams['axes.unicode_minus'] = False
-    return plt, rcParams
+    return (plt,)
 
 
 @app.cell(hide_code=True)

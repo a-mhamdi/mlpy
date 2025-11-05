@@ -51,14 +51,8 @@ def _():
 @app.cell
 def _():
     from matplotlib import pyplot as plt
-    plt.style.use('dark_background')
     plt.rc('figure', figsize=(6, 4))
-
-    from matplotlib import rcParams
-    rcParams['font.family'] = 'Comfortaa'
-    rcParams['font.size'] = 8
-    rcParams['axes.unicode_minus'] = False
-    return plt, rcParams
+    return (plt,)
 
 
 @app.cell(hide_code=True)

@@ -71,19 +71,6 @@ def _(np):
     return
 
 
-@app.cell
-def _():
-    from matplotlib import pyplot as plt
-    plt.style.use('dark_background')
-    plt.rc('figure', figsize=(6, 4))
-
-    from matplotlib import rcParams
-    rcParams['font.family'] = 'Comfortaa'
-    rcParams['font.size'] = 8
-    rcParams['axes.unicode_minus'] = False
-    return plt, rcParams
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""### Importing the dataset""")
@@ -429,7 +416,8 @@ def _(classifier_history):
 
 
 @app.cell
-def _(classifier_history, metrics, plt):
+def _(classifier_history, metrics):
+    from matplotlib import pyplot as plt
     (fig, axs) = plt.subplots(1, 4)
     plt.rc('figure', figsize=(12, 6))
     axs[0].plot(classifier_history.history['loss'])
@@ -448,7 +436,7 @@ def _(classifier_history, metrics, plt):
         ax.set_xlabel('epoch')
 
     plt.show()
-    return ax, axs, fig, idx, metric
+    return ax, axs, fig, idx, metric, plt
 
 
 @app.cell(hide_code=True)
