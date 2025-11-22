@@ -31,7 +31,7 @@ Codes run on top of a `Docker` image, ensuring a consistent and reproducible env
 > docker pull abmhamdi/mlpy
 > ```
 > 
-> This may take a while, as it will download source code, `python3` image, and install all necessary dependencies.
+> This may take a while, as it will download source code, `python3` image, and all necessary system dependencies.
 
 ## How to control the containers:
 
