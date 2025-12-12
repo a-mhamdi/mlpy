@@ -35,10 +35,10 @@ Codes run on top of a `Docker` image, ensuring a consistent and reproducible env
 
 ## How to control the containers:
 
+Services can be run by typing the command `docker-compose up`. This will start the `Jupyter Lab` on [http://localhost:2468](http://localhost:2468), and you should be able to use `Python` from within the notebook by starting a new `Python` notebook. You can parallelly start `Marimo` on [http://localhost:1357](http://localhost:1357).
+
 * ```docker compose up -d``` starts the container in detached mode
 * ```docker compose down``` stops and removes the container
-
-Services can be run by typing the command `docker-compose up`. This will start the `Jupyter Lab` on [http://localhost:2468](http://localhost:2468), and you should be able to use `Python` from within the notebook by starting a new `Python` notebook. You can parallelly start `Marimo` on [http://localhost:1357](http://localhost:1357).
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://raw.githubusercontent.com/a-mhamdi/mlpy/refs/heads/main/LICENSE) file for details.
