@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
-evince ~/mlpy/Slides-Labs/Lab-ML.pdf & \
-evince ~/mlpy/Slides-Labs/'An Introduction To ML'.pdf & \
-cd ~/mlpy/Docker && docker-compose down && docker-compose up -d && cd .. && firefox --private-window localhost:1357
+evince /home/isetbz/mlpy/PDF-Files/'An Introduction To ML'.pdf &
+evince /home/isetbz/mlpy/PDF-Files/Lab-ML.pdf &
+docker ps -aq | xargs -r docker stop | xargs -r docker rm &&
+cd /home/isetbz/mlpy/Docker && 
+docker-compose down && 
+docker-compose up -d && 
+bash /home/student/Desktop/mlpy/dcp.sh &&
+cd .. && 
+firefox --private-window localhost:2468  # 1357
