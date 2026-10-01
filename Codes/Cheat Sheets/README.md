@@ -1,1 +1,2 @@
-A full list of Cheat Sheets is available at [https://www.datacamp.com/cheat-sheet](https://www.datacamp.com/cheat-sheet).
+> [!IMPORTANT]
+> The cheat sheets included in this repository were created by [https://www.datacamp.com/](DataCamp) and are the property of their respective authors. They are included here for personal and educational reference only. I do not claim ownership of this material, and no copyright infringement is intended. All rights remain with [https://www.datacamp.com/](DataCamp). If you are a rights holder and would like any content removed, please open an issue or contact me and I will take it down promptly.
